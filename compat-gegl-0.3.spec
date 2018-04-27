@@ -4,7 +4,7 @@
 #
 Name     : compat-gegl-0.3
 Version  : 0.3.28
-Release  : 5
+Release  : 6
 URL      : https://download.gimp.org/pub/gegl/0.3/gegl-0.3.28.tar.bz2
 Source0  : https://download.gimp.org/pub/gegl/0.3/gegl-0.3.28.tar.bz2
 Summary  : Generic Graphics Library
@@ -104,7 +104,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1524872075
+export SOURCE_DATE_EPOCH=1524872559
 %configure --disable-static --without-jasper --without-tiff --disable-docs PYTHON=/usr/bin/python3 --without-vala
 make  %{?_smp_mflags}
 
@@ -116,7 +116,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1524872075
+export SOURCE_DATE_EPOCH=1524872559
 rm -rf %{buildroot}
 %make_install
 %find_lang gegl-0.3
@@ -127,9 +127,9 @@ rm -rf %{buildroot}
 
 %files bin
 %defattr(-,root,root,-)
-/usr/bin/gcut
-/usr/bin/gegl
-/usr/bin/gegl-imgcmp
+%exclude /usr/bin/gcut
+%exclude /usr/bin/gegl
+%exclude /usr/bin/gegl-imgcmp
 
 %files data
 %defattr(-,root,root,-)
