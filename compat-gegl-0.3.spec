@@ -4,7 +4,7 @@
 #
 Name     : compat-gegl-0.3
 Version  : 0.3.28
-Release  : 4
+Release  : 5
 URL      : https://download.gimp.org/pub/gegl/0.3/gegl-0.3.28.tar.bz2
 Source0  : https://download.gimp.org/pub/gegl/0.3/gegl-0.3.28.tar.bz2
 Summary  : Generic Graphics Library
@@ -104,7 +104,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1524866875
+export SOURCE_DATE_EPOCH=1524872075
 %configure --disable-static --without-jasper --without-tiff --disable-docs PYTHON=/usr/bin/python3 --without-vala
 make  %{?_smp_mflags}
 
@@ -116,7 +116,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1524866875
+export SOURCE_DATE_EPOCH=1524872075
 rm -rf %{buildroot}
 %make_install
 %find_lang gegl-0.3
@@ -127,125 +127,125 @@ rm -rf %{buildroot}
 
 %files bin
 %defattr(-,root,root,-)
-%exclude /usr/bin/gcut
-%exclude /usr/bin/gegl
-%exclude /usr/bin/gegl-imgcmp
+/usr/bin/gcut
+/usr/bin/gegl
+/usr/bin/gegl-imgcmp
 
 %files data
 %defattr(-,root,root,-)
-%exclude /usr/lib64/girepository-1.0/Gegl-0.3.typelib
-%exclude /usr/share/gir-1.0/Gegl-0.3.gir
+/usr/lib64/girepository-1.0/Gegl-0.3.typelib
+/usr/share/gir-1.0/*.gir
 
 %files dev
 %defattr(-,root,root,-)
-%exclude /usr/include/gegl-0.3/gegl-apply.h
-%exclude /usr/include/gegl-0.3/gegl-audio-fragment.h
-%exclude /usr/include/gegl-0.3/gegl-buffer-backend.h
-%exclude /usr/include/gegl-0.3/gegl-buffer-cl-iterator.h
-%exclude /usr/include/gegl-0.3/gegl-buffer-iterator.h
-%exclude /usr/include/gegl-0.3/gegl-buffer.h
-%exclude /usr/include/gegl-0.3/gegl-color.h
-%exclude /usr/include/gegl-0.3/gegl-cpuaccel.h
-%exclude /usr/include/gegl-0.3/gegl-curve.h
-%exclude /usr/include/gegl-0.3/gegl-debug.h
-%exclude /usr/include/gegl-0.3/gegl-enums.h
-%exclude /usr/include/gegl-0.3/gegl-graph-debug.h
-%exclude /usr/include/gegl-0.3/gegl-init.h
-%exclude /usr/include/gegl-0.3/gegl-lookup.h
-%exclude /usr/include/gegl-0.3/gegl-matrix.h
-%exclude /usr/include/gegl-0.3/gegl-node.h
-%exclude /usr/include/gegl-0.3/gegl-op.h
-%exclude /usr/include/gegl-0.3/gegl-operations-util.h
-%exclude /usr/include/gegl-0.3/gegl-paramspecs.h
-%exclude /usr/include/gegl-0.3/gegl-path.h
-%exclude /usr/include/gegl-0.3/gegl-plugin.h
-%exclude /usr/include/gegl-0.3/gegl-processor.h
-%exclude /usr/include/gegl-0.3/gegl-random.h
-%exclude /usr/include/gegl-0.3/gegl-tile-backend.h
-%exclude /usr/include/gegl-0.3/gegl-tile-handler.h
-%exclude /usr/include/gegl-0.3/gegl-tile-source.h
-%exclude /usr/include/gegl-0.3/gegl-tile.h
-%exclude /usr/include/gegl-0.3/gegl-types.h
-%exclude /usr/include/gegl-0.3/gegl-utils.h
-%exclude /usr/include/gegl-0.3/gegl-version.h
-%exclude /usr/include/gegl-0.3/gegl.h
-%exclude /usr/include/gegl-0.3/npd/deformation.h
-%exclude /usr/include/gegl-0.3/npd/graphics.h
-%exclude /usr/include/gegl-0.3/npd/lattice_cut.h
-%exclude /usr/include/gegl-0.3/npd/npd.h
-%exclude /usr/include/gegl-0.3/npd/npd_common.h
-%exclude /usr/include/gegl-0.3/npd/npd_debug.h
-%exclude /usr/include/gegl-0.3/npd/npd_gegl.h
-%exclude /usr/include/gegl-0.3/npd/npd_math.h
-%exclude /usr/include/gegl-0.3/opencl/cl.h
-%exclude /usr/include/gegl-0.3/opencl/cl_d3d10.h
-%exclude /usr/include/gegl-0.3/opencl/cl_ext.h
-%exclude /usr/include/gegl-0.3/opencl/cl_gl.h
-%exclude /usr/include/gegl-0.3/opencl/cl_gl_ext.h
-%exclude /usr/include/gegl-0.3/opencl/cl_platform.h
-%exclude /usr/include/gegl-0.3/opencl/gegl-cl-color.h
-%exclude /usr/include/gegl-0.3/opencl/gegl-cl-init.h
-%exclude /usr/include/gegl-0.3/opencl/gegl-cl-random.h
-%exclude /usr/include/gegl-0.3/opencl/gegl-cl-types.h
-%exclude /usr/include/gegl-0.3/opencl/gegl-cl.h
-%exclude /usr/include/gegl-0.3/opencl/opencl.h
-%exclude /usr/include/gegl-0.3/operation/gegl-extension-handler.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-area-filter.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-composer.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-composer3.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-context.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-filter.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-handlers.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-meta-json.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-meta.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-point-composer.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-point-composer3.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-point-filter.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-point-render.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-property-keys.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-sink.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-source.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation-temporal.h
-%exclude /usr/include/gegl-0.3/operation/gegl-operation.h
-%exclude /usr/include/gegl-0.3/sc/sc-common.h
-%exclude /usr/include/gegl-0.3/sc/sc-context.h
-%exclude /usr/include/gegl-0.3/sc/sc-outline.h
-%exclude /usr/include/gegl-0.3/sc/sc-sample.h
-%exclude /usr/lib64/libgegl-0.3.so
-%exclude /usr/lib64/libgegl-npd-0.3.so
-%exclude /usr/lib64/libgegl-sc-0.3.so
-%exclude /usr/lib64/pkgconfig/gegl-0.3.pc
-%exclude /usr/lib64/pkgconfig/gegl-sc-0.3.pc
+/usr/include/gegl-0.3/gegl-apply.h
+/usr/include/gegl-0.3/gegl-audio-fragment.h
+/usr/include/gegl-0.3/gegl-buffer-backend.h
+/usr/include/gegl-0.3/gegl-buffer-cl-iterator.h
+/usr/include/gegl-0.3/gegl-buffer-iterator.h
+/usr/include/gegl-0.3/gegl-buffer.h
+/usr/include/gegl-0.3/gegl-color.h
+/usr/include/gegl-0.3/gegl-cpuaccel.h
+/usr/include/gegl-0.3/gegl-curve.h
+/usr/include/gegl-0.3/gegl-debug.h
+/usr/include/gegl-0.3/gegl-enums.h
+/usr/include/gegl-0.3/gegl-graph-debug.h
+/usr/include/gegl-0.3/gegl-init.h
+/usr/include/gegl-0.3/gegl-lookup.h
+/usr/include/gegl-0.3/gegl-matrix.h
+/usr/include/gegl-0.3/gegl-node.h
+/usr/include/gegl-0.3/gegl-op.h
+/usr/include/gegl-0.3/gegl-operations-util.h
+/usr/include/gegl-0.3/gegl-paramspecs.h
+/usr/include/gegl-0.3/gegl-path.h
+/usr/include/gegl-0.3/gegl-plugin.h
+/usr/include/gegl-0.3/gegl-processor.h
+/usr/include/gegl-0.3/gegl-random.h
+/usr/include/gegl-0.3/gegl-tile-backend.h
+/usr/include/gegl-0.3/gegl-tile-handler.h
+/usr/include/gegl-0.3/gegl-tile-source.h
+/usr/include/gegl-0.3/gegl-tile.h
+/usr/include/gegl-0.3/gegl-types.h
+/usr/include/gegl-0.3/gegl-utils.h
+/usr/include/gegl-0.3/gegl-version.h
+/usr/include/gegl-0.3/gegl.h
+/usr/include/gegl-0.3/npd/deformation.h
+/usr/include/gegl-0.3/npd/graphics.h
+/usr/include/gegl-0.3/npd/lattice_cut.h
+/usr/include/gegl-0.3/npd/npd.h
+/usr/include/gegl-0.3/npd/npd_common.h
+/usr/include/gegl-0.3/npd/npd_debug.h
+/usr/include/gegl-0.3/npd/npd_gegl.h
+/usr/include/gegl-0.3/npd/npd_math.h
+/usr/include/gegl-0.3/opencl/cl.h
+/usr/include/gegl-0.3/opencl/cl_d3d10.h
+/usr/include/gegl-0.3/opencl/cl_ext.h
+/usr/include/gegl-0.3/opencl/cl_gl.h
+/usr/include/gegl-0.3/opencl/cl_gl_ext.h
+/usr/include/gegl-0.3/opencl/cl_platform.h
+/usr/include/gegl-0.3/opencl/gegl-cl-color.h
+/usr/include/gegl-0.3/opencl/gegl-cl-init.h
+/usr/include/gegl-0.3/opencl/gegl-cl-random.h
+/usr/include/gegl-0.3/opencl/gegl-cl-types.h
+/usr/include/gegl-0.3/opencl/gegl-cl.h
+/usr/include/gegl-0.3/opencl/opencl.h
+/usr/include/gegl-0.3/operation/gegl-extension-handler.h
+/usr/include/gegl-0.3/operation/gegl-operation-area-filter.h
+/usr/include/gegl-0.3/operation/gegl-operation-composer.h
+/usr/include/gegl-0.3/operation/gegl-operation-composer3.h
+/usr/include/gegl-0.3/operation/gegl-operation-context.h
+/usr/include/gegl-0.3/operation/gegl-operation-filter.h
+/usr/include/gegl-0.3/operation/gegl-operation-handlers.h
+/usr/include/gegl-0.3/operation/gegl-operation-meta-json.h
+/usr/include/gegl-0.3/operation/gegl-operation-meta.h
+/usr/include/gegl-0.3/operation/gegl-operation-point-composer.h
+/usr/include/gegl-0.3/operation/gegl-operation-point-composer3.h
+/usr/include/gegl-0.3/operation/gegl-operation-point-filter.h
+/usr/include/gegl-0.3/operation/gegl-operation-point-render.h
+/usr/include/gegl-0.3/operation/gegl-operation-property-keys.h
+/usr/include/gegl-0.3/operation/gegl-operation-sink.h
+/usr/include/gegl-0.3/operation/gegl-operation-source.h
+/usr/include/gegl-0.3/operation/gegl-operation-temporal.h
+/usr/include/gegl-0.3/operation/gegl-operation.h
+/usr/include/gegl-0.3/sc/sc-common.h
+/usr/include/gegl-0.3/sc/sc-context.h
+/usr/include/gegl-0.3/sc/sc-outline.h
+/usr/include/gegl-0.3/sc/sc-sample.h
+/usr/lib64/libgegl-0.3.so
+/usr/lib64/libgegl-npd-0.3.so
+/usr/lib64/libgegl-sc-0.3.so
+/usr/lib64/pkgconfig/gegl-0.3.pc
+/usr/lib64/pkgconfig/gegl-sc-0.3.pc
 
 %files lib
 %defattr(-,root,root,-)
-%exclude /usr/lib64/gegl-0.3/gegl-common-gpl3.so
-%exclude /usr/lib64/gegl-0.3/gegl-common.so
-%exclude /usr/lib64/gegl-0.3/gegl-core.so
-%exclude /usr/lib64/gegl-0.3/gegl-generated.so
-%exclude /usr/lib64/gegl-0.3/jpg-load.so
-%exclude /usr/lib64/gegl-0.3/jpg-save.so
-%exclude /usr/lib64/gegl-0.3/lcms-from-profile.so
-%exclude /usr/lib64/gegl-0.3/npd.so
-%exclude /usr/lib64/gegl-0.3/npy-save.so
-%exclude /usr/lib64/gegl-0.3/path.so
-%exclude /usr/lib64/gegl-0.3/pixbuf.so
-%exclude /usr/lib64/gegl-0.3/png-load.so
-%exclude /usr/lib64/gegl-0.3/png-save.so
-%exclude /usr/lib64/gegl-0.3/ppm-load.so
-%exclude /usr/lib64/gegl-0.3/ppm-save.so
-%exclude /usr/lib64/gegl-0.3/raw-load.so
-%exclude /usr/lib64/gegl-0.3/rgbe-load.so
-%exclude /usr/lib64/gegl-0.3/rgbe-save.so
-%exclude /usr/lib64/gegl-0.3/save-pixbuf.so
-%exclude /usr/lib64/gegl-0.3/seamless-clone-compose.so
-%exclude /usr/lib64/gegl-0.3/seamless-clone.so
-%exclude /usr/lib64/gegl-0.3/svg-load.so
-%exclude /usr/lib64/gegl-0.3/text.so
-%exclude /usr/lib64/gegl-0.3/transformops.so
-%exclude /usr/lib64/gegl-0.3/v4l.so
-%exclude /usr/lib64/gegl-0.3/vector-fill.so
-%exclude /usr/lib64/gegl-0.3/vector-stroke.so
+/usr/lib64/gegl-0.3/gegl-common-gpl3.so
+/usr/lib64/gegl-0.3/gegl-common.so
+/usr/lib64/gegl-0.3/gegl-core.so
+/usr/lib64/gegl-0.3/gegl-generated.so
+/usr/lib64/gegl-0.3/jpg-load.so
+/usr/lib64/gegl-0.3/jpg-save.so
+/usr/lib64/gegl-0.3/lcms-from-profile.so
+/usr/lib64/gegl-0.3/npd.so
+/usr/lib64/gegl-0.3/npy-save.so
+/usr/lib64/gegl-0.3/path.so
+/usr/lib64/gegl-0.3/pixbuf.so
+/usr/lib64/gegl-0.3/png-load.so
+/usr/lib64/gegl-0.3/png-save.so
+/usr/lib64/gegl-0.3/ppm-load.so
+/usr/lib64/gegl-0.3/ppm-save.so
+/usr/lib64/gegl-0.3/raw-load.so
+/usr/lib64/gegl-0.3/rgbe-load.so
+/usr/lib64/gegl-0.3/rgbe-save.so
+/usr/lib64/gegl-0.3/save-pixbuf.so
+/usr/lib64/gegl-0.3/seamless-clone-compose.so
+/usr/lib64/gegl-0.3/seamless-clone.so
+/usr/lib64/gegl-0.3/svg-load.so
+/usr/lib64/gegl-0.3/text.so
+/usr/lib64/gegl-0.3/transformops.so
+/usr/lib64/gegl-0.3/v4l.so
+/usr/lib64/gegl-0.3/vector-fill.so
+/usr/lib64/gegl-0.3/vector-stroke.so
 /usr/lib64/libgegl-0.3.so.0
 /usr/lib64/libgegl-0.3.so.0.328.0
 
