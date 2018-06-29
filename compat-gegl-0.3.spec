@@ -4,7 +4,7 @@
 #
 Name     : compat-gegl-0.3
 Version  : 0.3.28
-Release  : 8
+Release  : 9
 URL      : https://download.gimp.org/pub/gegl/0.3/gegl-0.3.28.tar.bz2
 Source0  : https://download.gimp.org/pub/gegl/0.3/gegl-0.3.28.tar.bz2
 Summary  : Generic Graphics Library
