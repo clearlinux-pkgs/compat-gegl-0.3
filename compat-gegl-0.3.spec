@@ -4,7 +4,7 @@
 #
 Name     : compat-gegl-0.3
 Version  : 0.3.28
-Release  : 11
+Release  : 12
 URL      : https://download.gimp.org/pub/gegl/0.3/gegl-0.3.28.tar.bz2
 Source0  : https://download.gimp.org/pub/gegl/0.3/gegl-0.3.28.tar.bz2
 Summary  : Generic Graphics Library
@@ -13,6 +13,7 @@ License  : BSD-3-Clause GPL-3.0 LGPL-3.0
 Requires: compat-gegl-0.3-bin
 Requires: compat-gegl-0.3-lib
 Requires: compat-gegl-0.3-data
+Requires: compat-gegl-0.3-license
 Requires: compat-gegl-0.3-locales
 BuildRequires : docbook-xml
 BuildRequires : gettext
@@ -21,6 +22,7 @@ BuildRequires : graphviz
 BuildRequires : lcms2-dev
 BuildRequires : libjpeg-turbo-dev
 BuildRequires : libxslt-bin
+BuildRequires : perl
 BuildRequires : perl(XML::Parser)
 BuildRequires : pkgconfig(babl)
 BuildRequires : pkgconfig(cairo)
@@ -40,6 +42,7 @@ BuildRequires : pkgconfig(pangocairo)
 BuildRequires : pkgconfig(pygobject-3.0)
 BuildRequires : python
 BuildRequires : ruby-dev
+BuildRequires : tiff-dev
 
 %description
 GEGL-0.3.28
@@ -54,6 +57,7 @@ other projects (imgflo, GNOME Photos, gcut, iconographer, â¦)
 Summary: bin components for the compat-gegl-0.3 package.
 Group: Binaries
 Requires: compat-gegl-0.3-data
+Requires: compat-gegl-0.3-license
 
 %description bin
 bin components for the compat-gegl-0.3 package.
@@ -83,9 +87,18 @@ dev components for the compat-gegl-0.3 package.
 Summary: lib components for the compat-gegl-0.3 package.
 Group: Libraries
 Requires: compat-gegl-0.3-data
+Requires: compat-gegl-0.3-license
 
 %description lib
 lib components for the compat-gegl-0.3 package.
+
+
+%package license
+Summary: license components for the compat-gegl-0.3 package.
+Group: Default
+
+%description license
+license components for the compat-gegl-0.3 package.
 
 
 %package locales
@@ -104,7 +117,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1524872559
+export SOURCE_DATE_EPOCH=1532203367
 %configure --disable-static --without-jasper --without-tiff --disable-docs PYTHON=/usr/bin/python3 --without-vala
 make  %{?_smp_mflags}
 
@@ -116,8 +129,12 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1524872559
+export SOURCE_DATE_EPOCH=1532203367
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/compat-gegl-0.3
+cp COPYING.LESSER %{buildroot}/usr/share/doc/compat-gegl-0.3/COPYING.LESSER
+cp COPYING %{buildroot}/usr/share/doc/compat-gegl-0.3/COPYING
+cp libs/poly2tri-c/COPYING %{buildroot}/usr/share/doc/compat-gegl-0.3/libs_poly2tri-c_COPYING
 %make_install
 %find_lang gegl-0.3
 
@@ -242,12 +259,20 @@ rm -rf %{buildroot}
 /usr/lib64/gegl-0.3/seamless-clone.so
 /usr/lib64/gegl-0.3/svg-load.so
 /usr/lib64/gegl-0.3/text.so
+/usr/lib64/gegl-0.3/tiff-load.so
+/usr/lib64/gegl-0.3/tiff-save.so
 /usr/lib64/gegl-0.3/transformops.so
 /usr/lib64/gegl-0.3/v4l.so
 /usr/lib64/gegl-0.3/vector-fill.so
 /usr/lib64/gegl-0.3/vector-stroke.so
 /usr/lib64/libgegl-0.3.so.0
 /usr/lib64/libgegl-0.3.so.0.328.0
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/compat-gegl-0.3/COPYING
+/usr/share/doc/compat-gegl-0.3/COPYING.LESSER
+/usr/share/doc/compat-gegl-0.3/libs_poly2tri-c_COPYING
 
 %files locales -f gegl-0.3.lang
 %defattr(-,root,root,-)

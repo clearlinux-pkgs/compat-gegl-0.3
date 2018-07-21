@@ -12,7 +12,6 @@ Configure miss: sdl-config
 Configure miss: AVFORMAT
 Configure miss: run_spiro in -lspiro
 Configure miss: umfpack_dl_solve in -lumfpack
-Configure miss: TIFF
 Configure miss: WEBP
 Configure miss: P2TC
 Configure miss: w3m
