@@ -6,13 +6,12 @@ Configure miss: gtkdoc-rebase
 Configure miss: gtkdoc-mkpdf
 Configure miss: enscript
 Configure miss: asciidoc
-Configure miss: MRG
-Configure miss: OPENEXR
+Configure miss: mrg
 Configure miss: sdl-config
-Configure miss: AVFORMAT
+Configure miss: libavformat >= 55.48.100 libavcodec >= 55.69.100 libswscale >= 2.6.100
 Configure miss: run_spiro in -lspiro
 Configure miss: umfpack_dl_solve in -lumfpack
-Configure miss: WEBP
-Configure miss: P2TC
+Configure miss: libwebp >= 0.5.0
+Configure miss: poly2tri-c >= poly2tri-c_required_version
 Configure miss: w3m
 Configure miss: rint

@@ -1,0 +1,32 @@
+From 77d200d95b9e9b942a9cc52a8ac7745b15527bab Mon Sep 17 00:00:00 2001
+From: William Douglas <william.douglas@intel.com>
+Date: Mon, 9 Sep 2019 10:24:36 -0700
+Subject: [PATCH] Disable content not needed for compat libs
+
+---
+ Makefile.am | 8 +-------
+ 1 file changed, 1 insertion(+), 7 deletions(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index 2b6ff96..be7bca1 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -9,14 +9,8 @@ SUBDIRS=\
+ 	gegl \
+ 	libs/npd \
+ 	seamless-clone \
+-	bin \
+ 	gcut \
+-	tools \
+-	operations \
+-	examples \
+-	tests \
+-	perf \
+-	po
++	operations
+ 
+ if ENABLE_DOCS
+ SUBDIRS+= docs
+-- 
+2.22.0
+

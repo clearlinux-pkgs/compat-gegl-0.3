@@ -1,6 +1,7 @@
 0.3.28
-perl
 gobject-introspection-dev
-libjpeg-turbo-dev
-tiff-dev
 graphviz
+libjpeg-turbo-dev
+openexr-dev
+perl
+tiff-dev
