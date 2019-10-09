@@ -4,7 +4,7 @@
 #
 Name     : compat-gegl-0.3
 Version  : 0.3.28
-Release  : 15
+Release  : 16
 URL      : https://download.gimp.org/pub/gegl/0.3/gegl-0.3.28.tar.bz2
 Source0  : https://download.gimp.org/pub/gegl/0.3/gegl-0.3.28.tar.bz2
 Summary  : Generic Graphics Library
@@ -45,7 +45,7 @@ BuildRequires : pkgconfig(lua)
 BuildRequires : pkgconfig(pango)
 BuildRequires : pkgconfig(pangocairo)
 BuildRequires : pkgconfig(pygobject-3.0)
-BuildRequires : python
+BuildRequires : python3
 BuildRequires : ruby-dev
 BuildRequires : tiff-dev
 # Suppress generation of debuginfo
@@ -87,7 +87,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568050039
+export SOURCE_DATE_EPOCH=1570646326
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -104,7 +104,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1568050039
+export SOURCE_DATE_EPOCH=1570646326
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/compat-gegl-0.3
 cp COPYING %{buildroot}/usr/share/package-licenses/compat-gegl-0.3/COPYING
@@ -192,6 +192,7 @@ rm -f %{buildroot}/usr/lib64/gegl-0.3/gegl-common-gpl3.so
 rm -f %{buildroot}/usr/lib64/gegl-0.3/gegl-common.so
 rm -f %{buildroot}/usr/lib64/gegl-0.3/gegl-core.so
 rm -f %{buildroot}/usr/lib64/gegl-0.3/gegl-generated.so
+rm -f %{buildroot}/usr/lib64/gegl-0.3/grey2.json
 rm -f %{buildroot}/usr/lib64/gegl-0.3/jpg-load.so
 rm -f %{buildroot}/usr/lib64/gegl-0.3/jpg-save.so
 rm -f %{buildroot}/usr/lib64/gegl-0.3/lcms-from-profile.so
@@ -227,7 +228,6 @@ rm -f %{buildroot}/usr/share/gir-1.0/Gegl-0.3.gir
 
 %files
 %defattr(-,root,root,-)
-/usr/lib64/gegl-0.3/grey2.json
 
 %files lib
 %defattr(-,root,root,-)
